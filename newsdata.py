@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import psycopg2
 
 
@@ -60,7 +61,8 @@ def query_results(query_results):
         print(
             index + 1, "-", results[0],
             str(results[1]), "views")
-        logresults.write(str(results[0]) + " - " + str(results[1]) + " views" + '\n')
+        logresults.write(str(results[0]) + " - " +
+                         str(results[1]) + " views" + '\n')
     logresults.close()
 
 
@@ -70,7 +72,8 @@ def error_results(query_results):
     logresults.write(query_results[1] + '\n')
     for results in query_results[0]:
         print(results[0], "-", str(results[1]) + "% errors")
-        logresults.write(str(results[0]) + " - " + str(results[1]) + "% errors")
+        logresults.write(str(results[0]) + " - " +
+                         str(results[1]) + "% errors")
     logresults.close()
 
 
